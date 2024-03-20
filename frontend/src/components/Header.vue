@@ -1,7 +1,7 @@
 <template>
 	<header class="header">
 		<h3>Скидка действует:</h3>
-		<Timer :time="0.1" />
+		<Timer :time="2" />
 	</header>
 </template>
 
