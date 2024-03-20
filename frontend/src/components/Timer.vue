@@ -14,7 +14,8 @@
 
 <script setup lang="ts">
 import { useFeatureStore } from '@/stores/features';
-import { computed, ref } from 'vue';
+import gsap from 'gsap';
+import { computed, onMounted, ref } from 'vue';
 const featureStore = useFeatureStore()
 const props = defineProps({
 	time: {
@@ -36,11 +37,17 @@ let countDown = setInterval(() => {
 			featureStore.openPopupDiscount()
 		} else if (launchTime < 0) {
 			featureStore.timeOverHandler()
+			timer.pause()
+			timer
+				.to('.minut', { opacity: 1 })
+				.to('.second', { opacity: 1 }, 0)
+				.to('.dots', { opacity: 1 }, 0)
 		} else {
 			seconds.value = Math.floor(launchTime / 1000)
 			minutes.value = Math.floor(launchTime / (60 * 1000))
 			if (seconds.value <= 30) {
 				featureStore.warningTimerHandler()
+				timer.play()
 			}
 		}
 	}
@@ -49,6 +56,13 @@ let countDown = setInterval(() => {
 const onedigit = (digit: number) => Math.floor(digit / 10) ? digit : '0' + digit;
 const minutTwoDigit = computed(() => onedigit(minutes.value % 60))
 const secondTwoDigit = computed(() => onedigit(seconds.value % 60))
+const timer = gsap.timeline({ paused: true })
+onMounted(() => {
+	timer
+		.to('.minut', { opacity: 0.5, repeat: -1, yoyo: true, duration: 1, ease: 'power1.in' })
+		.to('.second', { opacity: 0.5, repeat: -1, yoyo: true, duration: 1, ease: 'power1.in' }, 0)
+		.to('.dots', { opacity: 0.5, repeat: -1, yoyo: true, duration: 1, ease: 'power1.in' }, 0)
+})
 </script>
 
 <style lang="scss" scoped>
