@@ -1,0 +1,13 @@
+@import './base.css';
+@import './fonts/ptrootui.css';
+@import './fonts/bebas.css';
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+  
+}
+
+a{
+  text-decoration: none;
+}
