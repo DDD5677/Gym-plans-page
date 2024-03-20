@@ -39,7 +39,7 @@ let countDown = setInterval(() => {
 		} else {
 			seconds.value = Math.floor(launchTime / 1000)
 			minutes.value = Math.floor(launchTime / (60 * 1000))
-			if (seconds.value % 60 <= 30) {
+			if (seconds.value <= 30) {
 				featureStore.warningTimerHandler()
 			}
 		}
