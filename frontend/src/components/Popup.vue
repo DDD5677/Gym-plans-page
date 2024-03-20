@@ -277,7 +277,7 @@ if (props.carts) choosedPlan.value = props.carts[1].id
 						position: absolute;
 						bottom: 40px;
 						right: 10px;
-						background-image: url('@/assets/images/star.png');
+						background-image: url('@/assets/images/Star.png');
 						background-position: center;
 						background-size: contain;
 						background-repeat: no-repeat;

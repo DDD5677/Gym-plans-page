@@ -283,7 +283,7 @@ onMounted(async () => {
 					position: absolute;
 					top: -30px;
 					right: 10px;
-					background-image: url('@/assets/images/star.png');
+					background-image: url('@/assets/images/Star.png');
 					background-position: center;
 					background-size: contain;
 					background-repeat: no-repeat;
