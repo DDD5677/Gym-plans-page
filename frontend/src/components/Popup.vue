@@ -319,7 +319,7 @@ if (props.carts) choosedPlan.value = props.carts[1].id
 	.popup {
 		max-width: max(60%, 335px);
 		padding: 50px 20px 20px;
-		margin-top: 70px;
+		margin-top: 100px;
 
 		&_header {
 			.label {
