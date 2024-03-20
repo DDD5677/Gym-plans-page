@@ -3,6 +3,9 @@
 	margin:0;
 	padding:0;
 }
+html {
+	scroll-behavior: smooth;
+ }
 #app{
 		display:flex;
 		flex-direction:column;

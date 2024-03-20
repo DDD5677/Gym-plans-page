@@ -5,6 +5,7 @@ export const useFeatureStore = defineStore('feature', () => {
   const popupDiscount = ref(false)
   function openPopupDiscount() {
 	popupDiscount.value=true
+	window.scrollTo({top:0})
   }
   function closePopupDiscount() {
 	popupDiscount.value=false
